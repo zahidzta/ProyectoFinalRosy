@@ -74,6 +74,7 @@ void menu(){
 	printf("\n\t7 Salir\n");
 	
 	printf("\n\t Que opcion desea elegir: ");
+	fflush(stdin);
 	scanf("%d", &o);
 		if(o != 1, o!= 2, o != 3, o!= 4, o != 5, o != 6, o!= 7){
 			system("cls");
@@ -95,6 +96,7 @@ void menu(){
 				printf("\n\t2 Buscar por clave.\n");
 				printf("\n\t0 Regresar al menu.\n");
 				printf("\n\t¿Como desea buscar el registro? ");
+				fflush(stdin);
 				scanf("%d", &i);
 				
 				if(i != 1 & i != 2, i!= 0){
@@ -136,9 +138,10 @@ void menu(){
 				printf("\n\t3 Modificar el salario.");
 				printf("\n\t0 Regresar al menu principal");
 				printf("\n\t\t¿Que desea modoficar? ");
+				fflush(stdin);
 				scanf("%d", &i);
 				
-				if(i != 1,2,3,0){
+				if(i != 1, i != 2, i != 3,i != 0){
 					system("cls");
 					printf("\n\tIngrese una opcion valida\n");
 				}
