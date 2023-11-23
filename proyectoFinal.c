@@ -19,6 +19,7 @@ void eliminarRegistros();//Abel
 void modificarRegisro();//Javi
 void gotoxy(int x, int y);
 void menu();
+void tabla();
 
 //Vectores universales que guardan los nombres y los apellido que se van a utilizar
 char nombres[10][20] = {"Zahid", "Abel", "Javier", "Diego", "Alejandro", "Leonardo", "Daniel", "Maria", "Julieta", "Elisa"};
@@ -62,7 +63,7 @@ void menu(){
 	//menú principal
 		int o = 0;
 	int i = -1;
-	
+	system("cls");
 	while(o != 7){
 			printf("\n\t\tBeinvenido al menu\n");
 	printf("\n\t1 Mostrar todos los contactos:\n ");//Los tres registros con la info de el trabajador
@@ -72,11 +73,10 @@ void menu(){
 	printf("\n\t5 Eliminar un registro: \n");
 	printf("\n\t6 Modificar: \n");//La clave, el nombre o el salario
 	printf("\n\t7 Salir\n");
-	
 	printf("\n\t Que opcion desea elegir: ");
 	fflush(stdin);
 	scanf("%d", &o);
-		if(o != 1, o!= 2, o != 3, o!= 4, o != 5, o != 6, o!= 7){
+		if(o != 1, o!= 2, o != 3, o!= 4, o != 5, o != 6, o != 7){
 			system("cls");
 			printf("\n\tIngrese una opcion valida\n");
 		}
@@ -88,6 +88,9 @@ void menu(){
 		if(o == 1){
 			system("cls");
 			//Trabajadores con sus datos de informacion
+			printf("Base de datos");
+			tabla();
+			menu();			
 		}
 		if(o == 2){
 			system("cls");
@@ -132,16 +135,19 @@ void menu(){
 			}
 		if(o == 6){
 			system("cls");
+			printf("Los datos guardados son los siguentes: \n\n");
+			tabla();
 			while(i != 0){
+				printf("\n\t\t¿Que desea modoficar? ");
 				printf("\n\t1 Modificar clave.");
 				printf("\n\t2 Modificar nombre.");
 				printf("\n\t3 Modificar el salario.");
 				printf("\n\t0 Regresar al menu principal");
-				printf("\n\t\t¿Que desea modoficar? ");
+				printf("\n\t\t -");
 				fflush(stdin);
 				scanf("%d", &i);
 				
-				if(i != 1, i != 2, i != 3,i != 0){
+				if(i != 1, i != 2, i != 3, i != 0){
 					system("cls");
 					printf("\n\tIngrese una opcion valida\n");
 				}
@@ -151,7 +157,7 @@ void menu(){
 				}
 				if(i == 2){
 					system("cls");
-					//Modificar clave
+					//Modificar nombre
 				}
 				if(i == 3){
 					system("cls");
@@ -266,4 +272,15 @@ void eliminarRegistros(){
 //
 void modificarRegisro(){
 	
+}
+
+void tabla(){
+
+	generarSalarios();
+			generarClaves();
+			generarNombres();
+			imprimirTabla();
+			imprimirRegistros();
+			printf("\n\n");
+			system("pause");
 }
