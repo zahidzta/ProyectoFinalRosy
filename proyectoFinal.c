@@ -49,7 +49,7 @@ int main(){
 	imprimirRegistros();
 	return 0;
 }
-//función para utilizar gotoxy(mover el cursor en la pantalla)
+//funciÃ³n para utilizar gotoxy(mover el cursor en la pantalla)
 void gotoxy(int x, int y){
 	HANDLE consola = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coordenadas;
@@ -59,7 +59,108 @@ void gotoxy(int x, int y){
 }
 
 void menu(){
-	//menú principal
+	//menÃº principal
+		int o = 0;
+	int i = -1;
+	
+	while(o != 7){
+			printf("\n\t\tBeinvenido al menu\n");
+	printf("\n\t1 Mostrar todos los contactos:\n ");//Los tres registros con la info de el trabajador
+	printf("\n\t2 Buscar registro: \n");//opcion de nombre o clave
+	printf("\n\t3 Ordenar alfabeticamente por Nombre: \n");
+	printf("\n\t4 Insertar nuevos registros: \n");
+	printf("\n\t5 Eliminar un registro: \n");
+	printf("\n\t6 Modificar: \n");//La clave, el nombre o el salario
+	printf("\n\t7 Salir\n");
+	
+	printf("\n\t Que opcion desea elegir: ");
+	scanf("%d", &o);
+		if(o != 1, o!= 2, o != 3, o!= 4, o != 5, o != 6, o!= 7){
+			system("cls");
+			printf("\n\tIngrese una opcion valida\n");
+		}
+		if(o == 7){
+			system("cls");
+			printf("\n\tGracias por usar nuestro programa\n");
+			exit(0);
+		}
+		if(o == 1){
+			system("cls");
+			//Trabajadores con sus datos de informacion
+		}
+		if(o == 2){
+			system("cls");
+			while(i !=0){
+				printf("\n\t1 Buscar por nombre.\n");
+				printf("\n\t2 Buscar por clave.\n");
+				printf("\n\t0 Regresar al menu.\n");
+				printf("\n\tÂ¿Como desea buscar el registro? ");
+				scanf("%d", &i);
+				
+				if(i != 1 & i != 2, i!= 0){
+					system("cls");
+					printf("\n\t Ingrese una opcion valida\n");
+				}
+				if(i == 1){
+					system("cls");
+					//Buscar por nombre
+				}
+				if(i== 2){
+					system("cls");
+					//Buscar por clave
+				}
+				if(i == 0){
+					system("cls");
+					menu();
+					//Regresar al menu
+				}
+			}
+		}	
+		if(o == 3){
+			system("cls");
+			//Ordenar por orden alfabetico el nombre
+		}
+		if (o == 4){
+			system("cls");
+			//Insertar nuevos registros
+		}
+		if(o == 5){
+			system("cls");
+			//Eliminar un registro
+			}
+		if(o == 6){
+			system("cls");
+			while(i != 0){
+				printf("\n\t1 Modificar clave.");
+				printf("\n\t2 Modificar nombre.");
+				printf("\n\t3 Modificar el salario.");
+				printf("\n\t0 Regresar al menu principal");
+				printf("\n\t\tÂ¿Que desea modoficar? ");
+				scanf("%d", &i);
+				
+				if(i != 1,2,3,0){
+					system("cls");
+					printf("\n\tIngrese una opcion valida\n");
+				}
+				if(i == 1){
+					system("cls");
+					//Modificar la clave
+				}
+				if(i == 2){
+					system("cls");
+					//Modificar clave
+				}
+				if(i == 3){
+					system("cls");
+					//Modificar salario
+				}
+				if(i == 0){//Regresar al menu
+					system("cls");
+					menu();
+				}
+			}
+		}
+	}
 	printf("Menu");
 }
 
@@ -78,25 +179,25 @@ void generarClaves(){
 }
 
 void generarNombres(){
-	//variable para guardar un número aleatorio
+	//variable para guardar un nÃºmero aleatorio
 	int numRandom;
 	for(i = 0; i < 10; i++){
 		numRandom = rand() % 10;
-		//se concatena el nombre que se eligió aleatoriamente al valor de la matriz en la posición i
+		//se concatena el nombre que se eligiÃ³ aleatoriamente al valor de la matriz en la posiciÃ³n i
 		strcat(nombresGenerados[i], nombres[numRandom]);
 		//se le agrega un espacio a la cadena
 		strcat(nombresGenerados[i], " ");
 		numRandom = rand() % 10;
-		//se concatena el apellido 1 que se eligió aleatoriamente al valor de la matriz en la posición i
+		//se concatena el apellido 1 que se eligiÃ³ aleatoriamente al valor de la matriz en la posiciÃ³n i
 		strcat(nombresGenerados[i], apellidos[numRandom]);
 		//se le agrega un espacio a la cadena
 		strcat(nombresGenerados[i], " ");
 		numRandom = rand() % 10;
-		//se concatena el apellido 2 que se eligió aleatoriamente al valor de la matriz en la posición i
+		//se concatena el apellido 2 que se eligiÃ³ aleatoriamente al valor de la matriz en la posiciÃ³n i
 		strcat(nombresGenerados[i], apellidos[numRandom]);
 	}
 }
-//Función para imprimir la tabla donde se van a mostrar los registros
+//FunciÃ³n para imprimir la tabla donde se van a mostrar los registros
 void imprimirTabla(){
 	HANDLE consola = GetStdHandle(STD_OUTPUT_HANDLE);
 	//Estilo fondo gris y texto negro para los titulos de las columnas
@@ -117,7 +218,7 @@ void imprimirTabla(){
 	}
 }
 
-//Función para imprimir los registros
+//FunciÃ³n para imprimir los registros
 void imprimirRegistros(){
 	HANDLE consola = GetStdHandle(STD_OUTPUT_HANDLE);
 	for(i = 0; i < 10; i++){
