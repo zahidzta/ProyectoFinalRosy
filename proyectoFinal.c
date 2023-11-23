@@ -39,17 +39,13 @@ int main(){
 	//La pantalla va a tener 
 	system("mode con: cols=100 lines=30");
 	srand(time(NULL));
-	menu();
-	gotoxy(40, 1);
-	printf("Base de datos");
 	generarSalarios();
 	generarClaves();
 	generarNombres();
-	imprimirTabla();
-	imprimirRegistros();
+	menu();
 	return 0;
 }
-//función para utilizar gotoxy(mover el cursor en la pantalla)
+//funciÃ³n para utilizar gotoxy(mover el cursor en la pantalla)
 void gotoxy(int x, int y){
 	HANDLE consola = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coordenadas;
@@ -59,7 +55,7 @@ void gotoxy(int x, int y){
 }
 
 void menu(){
-	//menú principal
+	//menÃº principal
 		int o = 0;
 	int i = -1;
 	
@@ -87,6 +83,13 @@ void menu(){
 		if(o == 1){
 			system("cls");
 			//Trabajadores con sus datos de informacion
+			gotoxy(40, 1);
+			printf("Base de datos");
+			imprimirTabla();
+			imprimirRegistros();
+			printf("\n\n\t");
+			system("pause");
+			system("cls");
 		}
 		if(o == 2){
 			system("cls");
@@ -94,7 +97,7 @@ void menu(){
 				printf("\n\t1 Buscar por nombre.\n");
 				printf("\n\t2 Buscar por clave.\n");
 				printf("\n\t0 Regresar al menu.\n");
-				printf("\n\t¿Como desea buscar el registro? ");
+				printf("\n\tÂ¿Como desea buscar el registro? ");
 				scanf("%d", &i);
 				
 				if(i != 1 & i != 2, i!= 0){
@@ -135,7 +138,7 @@ void menu(){
 				printf("\n\t2 Modificar nombre.");
 				printf("\n\t3 Modificar el salario.");
 				printf("\n\t0 Regresar al menu principal");
-				printf("\n\t\t¿Que desea modoficar? ");
+				printf("\n\t\tÂ¿Que desea modoficar? ");
 				scanf("%d", &i);
 				
 				if(i != 1,2,3,0){
@@ -179,25 +182,25 @@ void generarClaves(){
 }
 
 void generarNombres(){
-	//variable para guardar un número aleatorio
+	//variable para guardar un nÃºmero aleatorio
 	int numRandom;
 	for(i = 0; i < 10; i++){
 		numRandom = rand() % 10;
-		//se concatena el nombre que se eligió aleatoriamente al valor de la matriz en la posición i
+		//se concatena el nombre que se eligiÃ³ aleatoriamente al valor de la matriz en la posiciÃ³n i
 		strcat(nombresGenerados[i], nombres[numRandom]);
 		//se le agrega un espacio a la cadena
 		strcat(nombresGenerados[i], " ");
 		numRandom = rand() % 10;
-		//se concatena el apellido 1 que se eligió aleatoriamente al valor de la matriz en la posición i
+		//se concatena el apellido 1 que se eligiÃ³ aleatoriamente al valor de la matriz en la posiciÃ³n i
 		strcat(nombresGenerados[i], apellidos[numRandom]);
 		//se le agrega un espacio a la cadena
 		strcat(nombresGenerados[i], " ");
 		numRandom = rand() % 10;
-		//se concatena el apellido 2 que se eligió aleatoriamente al valor de la matriz en la posición i
+		//se concatena el apellido 2 que se eligiÃ³ aleatoriamente al valor de la matriz en la posiciÃ³n i
 		strcat(nombresGenerados[i], apellidos[numRandom]);
 	}
 }
-//Función para imprimir la tabla donde se van a mostrar los registros
+//FunciÃ³n para imprimir la tabla donde se van a mostrar los registros
 void imprimirTabla(){
 	HANDLE consola = GetStdHandle(STD_OUTPUT_HANDLE);
 	//Estilo fondo gris y texto negro para los titulos de las columnas
@@ -218,7 +221,7 @@ void imprimirTabla(){
 	}
 }
 
-//Función para imprimir los registros
+//FunciÃ³n para imprimir los registros
 void imprimirRegistros(){
 	HANDLE consola = GetStdHandle(STD_OUTPUT_HANDLE);
 	for(i = 0; i < 10; i++){
