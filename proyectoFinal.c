@@ -161,6 +161,7 @@ void menu(){
 			}
 		}
 	}
+	printf("Menu");
 }
 
 void generarSalarios(){
