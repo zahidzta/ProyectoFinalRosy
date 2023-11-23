@@ -147,19 +147,19 @@ void imprimirRegistros(){
 void buscarRegistro(){
 	
 }
-
+//
 void ordenarRegistros(){
 	
 }
-
+//
 void insertarRegistros(){
 	
 }
-
+//
 void eliminarRegistros(){
 	
 }
-
+//
 void modificarRegisro(){
 	
 }
