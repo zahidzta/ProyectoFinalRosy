@@ -143,6 +143,7 @@ void imprimirRegistros(){
 	}
 }
 //
+
 void buscarRegistro(){
 	
 }
