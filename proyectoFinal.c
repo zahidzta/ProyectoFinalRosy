@@ -32,7 +32,7 @@ float salario[10];
 
 int i;
 int contador = 10; //Variable que mide si esta llena o no la base de datos
-char nulo[] = "NULL";
+char nulo[] = "NULL";//Variable que señala si un arreglo esta eliminado o no
 
 
 int main(){
