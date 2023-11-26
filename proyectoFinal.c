@@ -355,6 +355,7 @@ void eliminarRegistros(){
 							clave[i] = 0;
 							strcpy(nombresGenerados[i],nulo);//Copiar en la cadena de nombres, la cadena nulo para eliminar el registro
 							indicador = 99;//Se iguala a 99 para que salga del ciclo while
+							i = 10; //se iguala a 10 para que salga del ciclo for
 						}
 					}
 					if (indicador != 99){
@@ -383,6 +384,7 @@ void eliminarRegistros(){
 							clave[i] = 0;
 							strcpy(nombresGenerados[i],nulo);//Copiar en la cadena de nombres, la cadena nulo para eliminar el registro
 							indicador = 99;//Se iguala a 99 para que salga del ciclo while
+							i = 10; //se iguala a 10 para que salga del ciclo for
 						}
 					}
 					if (indicador != 99){
@@ -429,6 +431,7 @@ void eliminarRegistros(){
 					if(strcmp(strlwr(nombresGenerados[i]),strlwr(nombreEliminado)) == 0){//usamos lwr para convertrir a minusculas
 						strcpy(nombresGenerados[i],nulo);//Copiar en la cadena de nombres, la cadena nulo para eliminar el registro
 						indicador = 99; //Se iguala a 99 para salir del while
+						i = 10; //se iguala a 10 para que salga del ciclo for
 					}
 				}
 				if (indicador != 99){
@@ -455,6 +458,7 @@ void eliminarRegistros(){
 						if(strcmp(strlwr(nombresGenerados[i]),strlwr(nombreEliminado)) == 0){//Usamos strlwr para convertir a minusculas y que sea igual
 						strcpy(nombresGenerados[i],nulo);//Copiar en la cadena de nombres, la cadena nulo para eliminar el registro
 						indicador = 99; //Se iguala a 99 para salir del while
+						i = 10; //se iguala a 10 para que salga del ciclo for
 						}
 					}
 					if (indicador != 99){
